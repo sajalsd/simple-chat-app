@@ -31,4 +31,15 @@ io.on('connection', socket => {
         socket.broadcast.emit('typing', data);
     });
 
-})
+    socket.on('disconnect', function(){
+        console.log(socket.name + ' has disconnected from the chat.' + socket.id);
+        socket.broadcast.emit('left', socket.name);
+    });
+
+    socket.on('join', function (name) {
+        console.log(name + ' joined the chat.');
+        socket.name = name
+        socket.broadcast.emit('add', name);
+    });
+
+});

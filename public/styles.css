@@ -64,6 +64,20 @@ button{
     font-size: 18px;
     border: 0;
     padding: 12px 0;
-    width: 100%;
+    width: 98%;
+    margin: 1%;
     border-radius: 0 0 2px 2px;
+}
+
+.extra > button{
+    float: left;
+    width: 48%;
+    margin: 1%;
+}
+
+.extra::after{
+    clear: both;
+    content: '';
+    float: none;
+    display: block;
 }
